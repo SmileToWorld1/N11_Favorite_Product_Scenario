@@ -5,7 +5,7 @@
 >- Automation Tool: **Selenium WebDriver**
 >- Unit Testing Tool: **JUnit**
 >- Java 8 + SDK
->- Cucumber Report Plugin
+>- Cucumber Report 
 
 ### EXPLANATIONS
 >- The project has been prepared based on Cucumber BDD style.
