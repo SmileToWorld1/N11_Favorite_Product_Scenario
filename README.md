@@ -30,7 +30,11 @@
 This way easily browser type can be changed and also if it is necessary every important test data's can control directly from this file.
 ```properties
 browser=chrome
-n11.test.url=https://www.n11.com/
+n11.url=https://www.n11.com/
+expected.facebook.url=https://www.facebook.com/login
+anasayfa=n11 - Hayat Sana Gelir
+username=taksutyata@gmail.com
+password=tester123
 ```
 
 
