@@ -10,14 +10,14 @@
 ### EXPLANATIONS
 >- The project has been prepared based on Cucumber BDD style.
 >- Maven build management tool is used in this project by Java programming language.
->- The project includes one scenario which is about adding and then deleting one product from the My Favorites page on the www.n11.com.
+>- The project includes one scenario which is about adding and then deleting one product from the Favorites' page on the www.n11.com.
 
 ### HOW TO RUN TESTS
 
->- Under the runners package, there is a **"CukesRunner"** class and inside of this class right click and click the **"Run 'CukesRunner'"**.
->- **mvn clean test** -> in the IDE console or navigate project path in command line and run this command.
->- **mvn clean test -DBROWSER=firefox** -> Browser type can control easily from command line with this command.
->- **mvn test "-Dcucumber.filter.tags=@UI" -DBROWSER=firefox** Both browserType and tags which you want to run can control easily from the command line with this command. 
+>- Under the runners package, there is a **"CukesRunner"** class and inside this class right click and click the **"Run 'CukesRunner'"**.
+>- **mvn clean verify** -> in the IDE console or navigate project path in command line and run this command.
+>- **mvn clean verify -DBROWSER=firefox** -> Browser type can control easily from command line with this command.
+>- **mvn verify "-Dcucumber.filter.tags=@UI" -DBROWSER=firefox** Both browserType and tags which you want to run can control easily from the command line with this command. 
 
 ### Report 
 >- Cucumber report is generated under the target folder: `target/cucumber/cucumber-html-reports/overview-features.html`

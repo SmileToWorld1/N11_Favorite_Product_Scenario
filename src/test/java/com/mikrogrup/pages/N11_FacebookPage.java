@@ -1,5 +1,7 @@
 package com.mikrogrup.pages;
 
+import com.mikrogrup.utilities.BrowserUtils;
+import com.mikrogrup.utilities.ConfigurationReader;
 import com.mikrogrup.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -21,9 +23,10 @@ public class N11_FacebookPage {
     private WebElement loginButton;
 
     public void loginWithFacebook(){
-        inputEmail.sendKeys("taksutyata@gmail.com");
-        inputPassword.sendKeys("tester123");
-        loginButton.click();
+        BrowserUtils.waitNumberOfWindowsToBe(2);
+        inputEmail.sendKeys(ConfigurationReader.getProperty("username"));
+        inputPassword.sendKeys(ConfigurationReader.getProperty("password"));
+        BrowserUtils.waitForClickAbility(loginButton,10).click();
     }
 
 }

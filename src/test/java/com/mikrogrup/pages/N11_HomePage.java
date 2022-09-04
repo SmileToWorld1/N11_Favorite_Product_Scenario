@@ -5,7 +5,6 @@ import com.mikrogrup.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
@@ -41,12 +40,12 @@ public class N11_HomePage {
         WebElement aramaSonuçlarıSayfası = Driver.getDriver().findElement(By.linkText("" + sayfaNumarası));
         BrowserUtils.hover(aramaSonuçlarıSayfası);
         BrowserUtils.highlight(aramaSonuçlarıSayfası);
-        aramaSonuçlarıSayfası.click();
+        BrowserUtils.waitForClickAbility(aramaSonuçlarıSayfası,10).click();
     }
 
     public void seçiliÜrünüFavorilereEkle(int ürünSırası){
         WebElement favorilereEklenecekUrun = Driver.getDriver().findElement(By.xpath("(//span[@title=\"Favorilere ekle\"])["+ürünSırası+"]"));
-        favorilereEklenecekUrun.click();
+        BrowserUtils.waitForClickAbility(favorilereEklenecekUrun,10).click();
     }
 
 

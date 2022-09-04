@@ -1,44 +1,37 @@
 package com.mikrogrup.utilities;
 
 import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.util.Set;
-import java.util.concurrent.TimeUnit;
+
 
 public class BrowserUtils {
 
+    /**
+     * This method accepts a String "expectedInURL" and changes the window depends on expectedInURL
+     * @param expectedInURL
+     */
     public static void switchToWindow( String expectedInURL){
         Set<String> allWindowHandles = Driver.getDriver().getWindowHandles();
         for (String each : allWindowHandles) {
             Driver.getDriver().switchTo().window(each);
-            if (Driver.getDriver().getCurrentUrl().contains(expectedInURL)){
+            if (Driver.getDriver().getCurrentUrl().equals(expectedInURL)){
                 break;
             }
         }
     }
 
-    /*
+    /**
       This method accepts a String "expectedTitle" and Asserts if it is true
      */
     public static void verifyTitle( String expectedTitle){
         String actualTitle = Driver.getDriver().getTitle();
-        Assert.assertTrue(actualTitle.contains(expectedTitle));
-    }
-    /**
-     * This method will accept a String as expected value and verify actual URL CONTAİNS the value.
-     * @param expectedInURL
-     */
-    public static void verifyUrlContains( String expectedInURL){
-        String actualURL = Driver.getDriver().getCurrentUrl();
-        Assert.assertTrue(actualURL.contains(expectedInURL));
+        Assert.assertEquals("Başlık uyuşmuyor!",expectedTitle,actualTitle);
+
     }
 
     /**
@@ -71,16 +64,6 @@ public class BrowserUtils {
     }
 
     /**
-     * Clicks on an element using JavaScript
-     *
-     * @param element
-     */
-    public static void clickWithJS(WebElement element) {
-        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
-        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", element);
-    }
-
-    /**
      * Highlighs an element by changing its background and border color
      * @param element
      */
@@ -92,6 +75,18 @@ public class BrowserUtils {
             e.printStackTrace();
         }
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].removeAttribute('style', 'background: yellow; border: 2px solid red;');", element);
+    }
+
+    /**
+     * Waits for provided element to be clickable
+     *
+     * @param element
+     * @param timeout
+     * @return
+     */
+    public static WebElement waitForClickAbility(WebElement element, int timeout){
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), timeout);
+        return wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
 
