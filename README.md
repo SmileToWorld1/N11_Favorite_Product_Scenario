@@ -9,7 +9,7 @@
 
 ### EXPLANATION
 >- The project has been prepared based on Cucumber BDD style.
->- Maven build management tool is used in this project by Java programming language.
+>- In this project, **Java** programming language and **Maven** build management tool were used.
 >- The project includes one scenario which is about adding and then deleting one product from the Favorites' page on the www.n11.com.
 
 ### HOW TO RUN TEST SCENARIOS
