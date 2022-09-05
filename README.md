@@ -12,7 +12,7 @@
 >- Maven build management tool is used in this project by Java programming language.
 >- The project includes one scenario which is about adding and then deleting one product from the Favorites' page on the www.n11.com.
 
-### HOW TO RUN TESTS
+### HOW TO RUN TEST SCENARIOS
 
 >- Under the runners package, there is a **"CukesRunner"** class and inside this class right click and click the **"Run 'CukesRunner'"**.
 >- **mvn clean verify** -> in the IDE console or navigate project path in command line and run this command.
