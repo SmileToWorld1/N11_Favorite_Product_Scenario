@@ -1,13 +1,13 @@
-# N11 Favorite Product Scenario
+# N11 FAVORITE PRODUCT SCENARIO
 
-### System Requirements
+### SYSTEM REQUİREMENT
 >-  **Maven**
 >- **Selenium WebDriver**
 >-  **JUnit**
->- **Java 8 + SDK**
+>- **Java 8**
 >- **Cucumber Report**
 
-### EXPLANATIONS
+### EXPLANATION
 >- The project has been prepared based on Cucumber BDD style.
 >- Maven build management tool is used in this project by Java programming language.
 >- The project includes one scenario which is about adding and then deleting one product from the Favorites' page on the www.n11.com.
@@ -19,12 +19,12 @@
 >- **mvn clean verify -DBROWSER=firefox** -> Browser type can control easily from command line with this command.
 >- **mvn verify "-Dcucumber.filter.tags=@UI" -DBROWSER=firefox** Both browserType and tags which you want to run can control easily from the command line with this command. 
 
-### Report 
+### REPORT 
 >- Cucumber report is generated under the target folder: `target/cucumber/cucumber-html-reports/overview-features.html`
 >- Under the target folder also generated **rerun.txt** file, and with this file only the failed test scenarios can rerun through the **FailedTestRunner** class.   
 
 
-### Configuration Properties
+### CONFIGURATION PROPERTIES
 
 > **configuration.properties** file is designed for avoiding hard coded. Browser type and also some important test data's can be stored in this file.
 This way easily browser type can be changed and also if it is necessary every important test data's can control directly from this file.
@@ -38,7 +38,7 @@ password=tester123
 ```
 
 
-### Dependencies
+### DEPENDENCIES
 ```xml
 <dependencies>
     <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
@@ -86,7 +86,7 @@ password=tester123
 
 ```
 
-### Build Plugins
+### BUILD PLUGINS
 ```xml
 <build>
     <plugins>
